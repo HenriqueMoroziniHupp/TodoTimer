@@ -1,0 +1,47 @@
+{
+  "name": "frontend-base-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "vue-cli-service lint --cache --no-fix",
+    "lint:css": "stylelint 'src/**/*.{vue,htm,html,css,sss,less,scss,sass}' --cache",
+    "cz": "cz",
+    "postinstall": "husky install"
+  },
+  "dependencies": {
+    "core-js": "^3.8.1",
+    "register-service-worker": "^1.7.2",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
+    "vuex": "^3.6.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.9",
+    "@vue/cli-plugin-eslint": "^4.5.9",
+    "@vue/cli-plugin-pwa": "^4.5.9",
+    "@vue/cli-plugin-unit-mocha": "^4.5.9",
+    "@vue/cli-service": "^4.5.9",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.16.0",
+    "eslint-plugin-vue": "^7.4.0",
+    "husky": "^5.0.6",
+    "sass": "^1.32.0",
+    "sass-loader": "^10.1.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
+    "stylelint-webpack-plugin": "^2.1.1",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
