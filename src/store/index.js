@@ -48,7 +48,6 @@ export default new Vuex.Store({
 
         newTodos.splice(index, 1);
         commit('SET_TODOS', newTodos);
-        console.log('Apagou o TODO');
       }
     },
     toggleTodo({ commit, getters }, todo) {
