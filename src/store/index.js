@@ -51,20 +51,6 @@ export default new Vuex.Store({
         console.log('Apagou o TODO');
       }
     },
-    markAsDone({ commit, getters }, todo) {
-      const index = this.state.todos.indexOf(todo);
-      const newTodos = getters.allTodos;
-
-      newTodos[index].done = true;
-      commit('SET_TODOS', newTodos);
-    },
-    markAsUndone({ commit, getters }, todo) {
-      const index = this.state.todos.indexOf(todo);
-      const newTodos = getters.allTodos;
-
-      newTodos[index].done = false;
-      commit('SET_TODOS',newTodos);
-    },
     toggleTodo({ commit, getters }, todo) {
       const index = this.state.todos.indexOf(todo);
       const newTodos = getters.allTodos;
