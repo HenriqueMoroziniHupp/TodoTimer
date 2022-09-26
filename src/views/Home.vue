@@ -1,7 +1,8 @@
 <template>
   <main class="home">
     <TodoCard />
-    <!-- <PomoDoro /> -->
+    <!-- <TestVue /> -->
+    <PomoDoro />
   </main>
 </template>
 
@@ -9,14 +10,18 @@
 import TodoCard from '../components/todo/TodoCard.vue';
 // eslint-disable-next-line no-unused-vars
 import PomoDoro from '../components/PomoDoro.vue';
+import TestVue from '../components/TestVue.vue';
 
 export default {
   name: 'Home',
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     TodoCard,
     // eslint-disable-next-line vue/no-unused-components
-    // PomoDoro
-  }
+    TestVue,
+    // eslint-disable-next-line vue/no-unused-components
+    PomoDoro
+}
 };
 </script>
 

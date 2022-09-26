@@ -112,7 +112,7 @@ import { mapActions, mapGetters } from 'vuex';
      ]),
     },
     created() {
-      this.fetchTodo();
+      // this.fetchTodo();
     },
     methods: {
       ...mapActions([
