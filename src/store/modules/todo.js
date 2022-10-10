@@ -35,8 +35,8 @@ export default {
         newTodos.push(newTodo);
         commit('SET_TODOS', newTodos);
       },
-      destroyTodo({ commit, getters }, todo) {
-        const index = this.state.todos.indexOf(todo);
+      destroyTodo({ commit, getters, state }, todo) {
+        const index = state.todos.indexOf(todo);
 
         if (index !== -1) {
           const newTodos = getters.allTodos;
@@ -45,8 +45,8 @@ export default {
           commit('SET_TODOS', newTodos);
         }
       },
-      toggleTodo({ commit, getters }, todo) {
-        const index = this.state.todos.indexOf(todo);
+      toggleTodo({ commit, getters, state }, todo) {
+        const index = state.todos.indexOf(todo);
         const newTodos = getters.allTodos;
 
         newTodos[index].done = !newTodos[index].done;

@@ -1,16 +1,18 @@
 <template>
   <main class="home">
-    <TodoCard />
-    <!-- <TestVue /> -->
-    <PomoDoro />
+    <!-- <TodoCard class="todo" /> -->
+    <TestVue />
+    <TimerCard class="time" />
+    <NotesCard class="notes" />
   </main>
 </template>
 
 <script>
 import TodoCard from '../components/todo/TodoCard.vue';
 // eslint-disable-next-line no-unused-vars
-import PomoDoro from '../components/PomoDoro.vue';
+import TimerCard from '../components/timer/TimerCard.vue';
 import TestVue from '../components/TestVue.vue';
+import NotesCard from '../components/notes/NotesCard.vue';
 
 export default {
   name: 'Home',
@@ -20,16 +22,56 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     TestVue,
     // eslint-disable-next-line vue/no-unused-components
-    PomoDoro
+    TimerCard,
+    NotesCard
 }
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  padding: 2rem;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  grid-template-columns: max-content ;
+  grid-template-rows: repeat(3, max-content);
+  grid-template-areas:
+    'time'
+    'notes'
+    'todo'
+  ;
+
+  .todo {
+    grid-area: todo;
+    justify-self: center;
+  }
+
+  .time {
+    grid-area: time;
+  }
+
+  .notes {
+    grid-area: notes;
+  }
+  // height: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .home {
+    grid-template-columns: max-content max-content;
+    grid-template-rows: max-content max-content;
+    grid-template-areas:
+      'todo time'
+      'todo notes'
+    ;
+
+    // .todo {
+
+    // }
+  }
 }
 </style>

@@ -3,92 +3,94 @@
     <h1 class="todo__title">
       Tarefas
     </h1>
-    <form class="todo__form">
-      <input
-        v-model="text"
-        type="text"
-        class="todo__form__input"
-        placeholder="Criar nova tarefa..."
-      >
-      <button
-        class="todo__form__btn-add"
-        @click.prevent="addNewTodo(text)"
-      >
-        <img
-          src="../../assets/img/icon-cross.svg"
-          alt="Adicionar tarefa"
+    <div class="todo__wrapper">
+      <form class="todo__form">
+        <input
+          v-model="text"
+          type="text"
+          class="todo__form__input"
+          placeholder="Criar nova tarefa..."
         >
-      </button>
-    </form>
-    <div class="todo__list">
-      <h2 class="todo__list__title">
-        Pendentes
-      </h2>
-      <li
-        v-for="todo in notDoneTodos"
-        :key="todo.id"
-        :class="['todo__list__items', { 'todo__list__items--check': todo.done }]"
-      >
         <button
-          class="btn-check"
-          @click="toggleTodo(todo)"
-        >
-          <img
-            v-if="todo.done"
-            src="../../assets/img/icon-check.svg"
-            alt="Checked Item"
-            class="btn-check__icon"
-          >
-        </button>
-        <p class="item">
-          {{ todo.text }}
-        </p>
-        <button
-          class="btn-destoy"
-          @click="destroyTodo(todo)"
+          class="todo__form__btn-add"
+          @click.prevent="addNewTodo(text)"
         >
           <img
             src="../../assets/img/icon-cross.svg"
-            alt="Apagar item"
-            class="btn-destroy__icon"
+            alt="Adicionar tarefa"
           >
         </button>
-      </li>
-    </div>
-    <div class="todo__list">
-      <h2 class="todo__list__title">
-        Concluídas
-      </h2>
-      <li
-        v-for="todo in doneTodos"
-        :key="todo.id"
-        :class="['todo__list__items', { 'todo__list__items--check': todo.done }]"
-      >
-        <button
-          class="btn-check"
-          @click="toggleTodo(todo)"
+      </form>
+      <div class="todo__list">
+        <h2 class="todo__list__title">
+          Pendentes
+        </h2>
+        <li
+          v-for="todo in notDoneTodos"
+          :key="todo.id"
+          :class="['todo__list__items', { 'todo__list__items--check': todo.done }]"
         >
-          <img
-            v-if="todo.done"
-            src="../../assets/img/icon-check.svg"
-            alt="Checked Item"
-            class="btn-check__icon"
+          <button
+            class="btn-check"
+            @click="toggleTodo(todo)"
           >
-        </button>
-        <p class="item">
-          {{ todo.text }}
-        </p>
-        <button
-          class="btn-destoy"
-          @click="destroyTodo(todo)"
+            <img
+              v-if="todo.done"
+              src="../../assets/img/icon-check.svg"
+              alt="Checked Item"
+              class="btn-check__icon"
+            >
+          </button>
+          <p class="item">
+            {{ todo.text }}
+          </p>
+          <button
+            class="btn-destoy"
+            @click="destroyTodo(todo)"
+          >
+            <img
+              src="../../assets/img/icon-cross.svg"
+              alt="Apagar item"
+              class="btn-destroy__icon"
+            >
+          </button>
+        </li>
+      </div>
+      <div class="todo__list">
+        <h2 class="todo__list__title">
+          Concluídas
+        </h2>
+        <li
+          v-for="todo in doneTodos"
+          :key="todo.id"
+          :class="['todo__list__items', { 'todo__list__items--check': todo.done }]"
         >
-          <img
-            src="../../assets/img/icon-cross.svg"
-            alt="Apagar item"
-            class="btn-destroy__icon"
+          <button
+            class="btn-check"
+            @click="toggleTodo(todo)"
           >
-        </button>
-      </li>
+            <img
+              v-if="todo.done"
+              src="../../assets/img/icon-check.svg"
+              alt="Checked Item"
+              class="btn-check__icon"
+            >
+          </button>
+          <p class="item">
+            {{ todo.text }}
+          </p>
+          <button
+            class="btn-destoy"
+            @click="destroyTodo(todo)"
+          >
+            <img
+              src="../../assets/img/icon-cross.svg"
+              alt="Apagar item"
+              class="btn-destroy__icon"
+            >
+          </button>
+        </li>
+      </div>
     </div>
   </div>
 </template>
@@ -119,13 +121,16 @@ import { mapActions, mapGetters } from 'vuex';
       'fetchTodo',
       'addTodo',
       'destroyTodo',
-      'markAsDone',
-      'markAsUndone',
       'toggleTodo'
       ]),
       addNewTodo(text) {
         this.addTodo(text);
         this.text = '';
+      },
+      mostraTodos() {
+        this.notDoneTodos.forEach(todo => {
+          console.log(todo);
+        });
       }
     },
   };
@@ -133,20 +138,21 @@ import { mapActions, mapGetters } from 'vuex';
 
 <style lang="scss" scoped>
 .todo-card {
-  margin: 1rem;
   display: grid;
   grid-template-columns: 22rem;
-  gap: 2rem;
-  // place-content: center;
+  align-content: start;
   .todo__title {
-    font-size: 2.5rem;
+    font-size: $text-4xl;
     font-weight: 700;
     text-align: center;
   }
 
+  .todo__wrapper {
+    display: grid;
+    gap: 2rem;
+  }
   .todo__form {
     display: grid;
-    justify-content: space-between;
     grid-template-columns: auto max-content;
     background-color: $very-dark-desaturated-blue;
     padding: $padding;
