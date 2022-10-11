@@ -127,11 +127,6 @@ import { mapActions, mapGetters } from 'vuex';
         this.addTodo(text);
         this.text = '';
       },
-      mostraTodos() {
-        this.notDoneTodos.forEach(todo => {
-          console.log(todo);
-        });
-      }
     },
   };
 </script>

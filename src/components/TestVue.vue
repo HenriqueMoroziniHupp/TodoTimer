@@ -40,7 +40,7 @@
         this.elapsed += Math.min(time - lastTime, this.duration - this.elapsed);
         lastTime = time;
         this.handle = requestAnimationFrame(update);
-        console.log(Date.UTC);
+        // console.log(Date.UTC);
       };
 
       update();

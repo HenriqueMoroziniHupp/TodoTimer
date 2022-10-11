@@ -31,12 +31,10 @@ export default {
       // return new Promise((resolve) => {
         if(!state.pause && state.workTime > 0) {
           const interval = setInterval(() => {
-            console.log(`time dentro: ${state.workTime}`);
             if (state.workTime <= 0 || state.pause) {
               commit('SET_PAUSE', true);
               clearInterval(interval);
               // resolve();
-              console.log('resolveu');
             } else commit('DECREMENT');
           }, 100);
         }

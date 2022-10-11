@@ -110,8 +110,6 @@ import ModalSettings from './ModalSettings';
 
       ///////////////////////////////////////////
       async startTimer() {
-        console.log(this.funcao);
-
         if (this.funcao === 'pomodoro') {
           await this.timer(25);
           this.funcao = 'shortBreak';
@@ -127,7 +125,6 @@ import ModalSettings from './ModalSettings';
           this.time--;
           if (!this.time) {
             clearInterval(interval);
-            console.log('acabou');
           }
         }, 1000);
       },
@@ -144,7 +141,6 @@ import ModalSettings from './ModalSettings';
             this.funcao = 'pomodoro';
           }
         } while (this.quatidadePomodoros > 0);
-        console.log('promessa ok');
       },
     }
   };
