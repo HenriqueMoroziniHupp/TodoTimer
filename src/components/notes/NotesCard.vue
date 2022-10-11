@@ -41,7 +41,6 @@
       font-weight: 700;
       font-size: $text-4xl;
       text-align: center;
-
     }
 
     .notes-container {
@@ -51,6 +50,7 @@
       border-radius: $border;
       min-height: 100%;
       box-shadow: 0 8px 20px #0000007f;
+
       .notes-textarea {
         background-color: $very-dark-desaturated-blue;
         padding: $padding;
@@ -60,14 +60,14 @@
       }
     }
 
-    /* ===== Scrollbar CSS ===== */
-    /* Firefox */
+    // ===== Scrollbar CSS =====
+    // Firefox
     * {
       scrollbar-width: none;
       scrollbar-color: $dark-grayish-blue $very-dark-desaturated-blue !important;
     }
 
-    /* Chrome, Edge, and Safari */
+    // Chrome, Edge, and Safari
     *::-webkit-scrollbar {
       width: 16px;
     }

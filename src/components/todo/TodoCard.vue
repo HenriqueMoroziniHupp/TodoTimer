@@ -141,6 +141,7 @@ import { mapActions, mapGetters } from 'vuex';
   display: grid;
   grid-template-columns: 22rem;
   align-content: start;
+
   .todo__title {
     font-size: $text-4xl;
     font-weight: 700;
@@ -151,6 +152,7 @@ import { mapActions, mapGetters } from 'vuex';
     display: grid;
     gap: 2rem;
   }
+
   .todo__form {
     display: grid;
     grid-template-columns: auto max-content;

@@ -160,20 +160,20 @@ import ModalSettings from './ModalSettings';
     .card {
       background-color: $very-dark-desaturated-blue;
       display: grid;
-      grid-template-rows: 1fr repeat(2,max-content);
+      grid-template-rows: 1fr repeat(2, max-content);
       place-items: center;
       border-radius: $border;
-      box-shadow: 0 8px 20px #0000007f;;
+      box-shadow: 0 8px 20px #0000007f;
 
-      &__timer{
+      &__timer {
         font-size: 3.5rem;
         font-weight: 700;
       }
 
       &__title {
-      font-size: $text-4xl;
-      font-weight: 700;
-      text-align: center;
+        font-size: $text-4xl;
+        font-weight: 700;
+        text-align: center;
       }
     }
 

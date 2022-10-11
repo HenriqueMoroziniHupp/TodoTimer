@@ -41,7 +41,7 @@ import { mapActions, mapGetters } from 'vuex';
 </script>
 
 <style lang="scss" scoped>
-.modal-settings {
+  .modal-settings {
     position: absolute;
     top: 0;
     left: 0;
@@ -71,5 +71,5 @@ import { mapActions, mapGetters } from 'vuex';
       border-color: aliceblue;
       background-color: aliceblue;
     }
-}
+  }
 </style>

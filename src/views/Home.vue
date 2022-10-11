@@ -1,7 +1,7 @@
 <template>
   <main class="home">
-    <!-- <TodoCard class="todo" /> -->
-    <TestVue />
+    <TodoCard class="todo" />
+    <!-- <TestVue /> -->
     <TimerCard class="time" />
     <NotesCard class="notes" />
   </main>
@@ -34,13 +34,12 @@ export default {
   display: grid;
   place-content: center;
   gap: 1rem;
-  grid-template-columns: max-content ;
+  grid-template-columns: max-content;
   grid-template-rows: repeat(3, max-content);
   grid-template-areas:
     'time'
     'notes'
-    'todo'
-  ;
+    'todo';
 
   .todo {
     grid-area: todo;
@@ -54,10 +53,6 @@ export default {
   .notes {
     grid-area: notes;
   }
-  // height: 100%;
-  // display: flex;
-  // justify-content: center;
-  // align-items: flex-start;
 }
 
 @media (min-width: 1024px) {
@@ -66,12 +61,7 @@ export default {
     grid-template-rows: max-content max-content;
     grid-template-areas:
       'todo time'
-      'todo notes'
-    ;
-
-    // .todo {
-
-    // }
+      'todo notes';
   }
 }
 </style>
