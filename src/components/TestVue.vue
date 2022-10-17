@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p>popo</p>
     <label>Elapsed Time: <progress :value="elapsed / duration" /></label>
 
     <div>{{ (elapsed / 1000).toFixed(1) }}s</div>
+    <div>elapsed: {{ (elapsed / 10000).toFixed(1)*10 }}</div>
 
     <div>
       Duration: <input
@@ -33,14 +33,14 @@
     created() {
       let lastTime = performance.now();
 
-      console.log(lastTime);
+
       const update = () => {
         const time = performance.now();
 
         this.elapsed += Math.min(time - lastTime, this.duration - this.elapsed);
         lastTime = time;
         this.handle = requestAnimationFrame(update);
-        console.log(this.handle);
+        // console.log(Date.UTC);
       };
 
       update();

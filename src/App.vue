@@ -36,6 +36,28 @@
 @import "@/assets/sass/project/_buttons.scss";
 @import "@/assets/sass/project/_form.scss";
 
+// ===== Scrollbar CSS =====
+// Firefox
+* {
+  scrollbar-width: none;
+  scrollbar-color: $dark-grayish-blue $very-dark-blue;
+}
+
+// Chrome, Edge, and Safari
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $very-dark-blue;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $dark-grayish-blue;
+  border-radius: 10px;
+  border: 3px solid $very-dark-blue;
+}
+
 #app,
 html,
 body {

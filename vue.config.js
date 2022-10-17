@@ -31,6 +31,7 @@ module.exports = {
       },
     },
   },
+
   css: {
     loaderOptions: {
       scss: {
@@ -41,4 +42,6 @@ module.exports = {
       },
     },
   },
+
+  // transpileDependencies: true
 };
