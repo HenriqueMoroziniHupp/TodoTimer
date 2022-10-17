@@ -26,10 +26,6 @@
         </button>
       </div>
     </div>
-
-
-
-
     <transition
       name="modal"
     >
@@ -149,7 +145,8 @@ import ModalSettings from './ModalSettings';
 <style lang="scss" scoped>
   .timer-card {
     display: grid;
-    grid-template-columns: minmax(22rem, 30rem);
+    // grid-template-columns: minmax(22rem, 30rem);
+    grid-template-columns: 1fr;
     grid-template-rows: max-content 25rem;
     height: 100%;
 
@@ -189,13 +186,13 @@ import ModalSettings from './ModalSettings';
     }
 
     .modal-enter-active,
-    .modal-leave {
+    .modal-leave-to {
       opacity: 0;
     }
 
     .modal-enter-from,
     .modal-leave-to {
-      transition: opacity 0.2s ease;
+      transition: opacity 0.4s ease;
     }
   }
   // .pomodoro {

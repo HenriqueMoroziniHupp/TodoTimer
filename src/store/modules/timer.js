@@ -36,7 +36,7 @@ export default {
               clearInterval(interval);
               // resolve();
             } else commit('DECREMENT');
-          }, 100);
+          }, 1000);
         }
       // });
     },

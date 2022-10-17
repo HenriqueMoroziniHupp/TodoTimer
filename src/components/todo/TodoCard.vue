@@ -114,7 +114,6 @@ import { mapActions, mapGetters } from 'vuex';
      ]),
     },
     created() {
-      // this.fetchTodo();
     },
     methods: {
       ...mapActions([
@@ -134,7 +133,8 @@ import { mapActions, mapGetters } from 'vuex';
 <style lang="scss" scoped>
 .todo-card {
   display: grid;
-  grid-template-columns: 22rem;
+  // grid-template-columns: minmax(20rem, 22rem);
+  grid-template-columns: 1fr;
   align-content: start;
 
   .todo__title {

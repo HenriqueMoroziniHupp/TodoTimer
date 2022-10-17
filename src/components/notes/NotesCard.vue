@@ -12,28 +12,44 @@
         v-model="text"
         class="notes-textarea"
         placeholder="Write your notes ^-^"
+        @keyup="setNote(text)"
       >
     </div>
-    bla bla bla
-    </textarea>
+      </textarea>
     </div>
   </div>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex';
   export default {
     name: 'NotesCard',
     data() {
       return {
-        text: '!!!',
+        text: '',
       };
-    }
+    },
+    computed: {
+      ...mapGetters([
+        'getNote'
+      ]),
+    },
+    created() {
+      this.text = this.getNote;
+      console.log(this.text);
+    },
+    methods: {
+      ...mapActions([
+        'setNote',
+      ]),
+    },
   };
 </script>
 
 <style lang="scss" scoped>
   .notes-card {
     display: grid;
-    grid-template-columns: minmax(22rem, 30rem);
+    // grid-template-columns: minmax(22rem, 30rem);
+    grid-template-columns: 1fr;
     grid-template-rows: max-content 25rem;
     align-items: start;
 

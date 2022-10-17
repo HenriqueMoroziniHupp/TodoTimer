@@ -33,8 +33,8 @@ export default {
   padding: 2rem;
   display: grid;
   place-content: center;
-  gap: 1rem;
-  grid-template-columns: max-content;
+  gap: 2rem;
+  grid-template-columns: minmax(20rem, 30rem);
   grid-template-rows: repeat(3, max-content);
   grid-template-areas:
     'time'
@@ -43,7 +43,7 @@ export default {
 
   .todo {
     grid-area: todo;
-    justify-self: center;
+    // justify-self: center;
   }
 
   .time {
@@ -55,9 +55,10 @@ export default {
   }
 }
 
-@media (min-width: 1024px) {
+@include screen(tablet-up) {
   .home {
-    grid-template-columns: max-content max-content;
+    // grid-template-columns: max-content max-content;
+    grid-template-columns: repeat(2, minmax(20rem, 30rem));
     grid-template-rows: max-content max-content;
     grid-template-areas:
       'todo time'

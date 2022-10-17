@@ -4,13 +4,15 @@ import createPersistedState from 'vuex-persistedstate';
 
 import timer from './modules/timer';
 import todo from './modules/todo';
+import notes from './modules/notes';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
+    notes,
     timer,
-    todo
+    todo,
   },
   plugins: [
     createPersistedState({
