@@ -8,7 +8,6 @@ export default {
   actions: {
     setNote({ commit }, note) {
       commit('SET_NOTE', note);
-      console.log(note);
     },
   },
   mutations: {

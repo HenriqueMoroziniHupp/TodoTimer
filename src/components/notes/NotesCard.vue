@@ -35,7 +35,6 @@ import { mapActions, mapGetters } from 'vuex';
     },
     created() {
       this.text = this.getNote;
-      console.log(this.text);
     },
     methods: {
       ...mapActions([
