@@ -1,6 +1,6 @@
 export default {
   state: {
-    note: 'vuex',
+    note: '',
   },
   getters: {
     getNote: (state) => state.note,
