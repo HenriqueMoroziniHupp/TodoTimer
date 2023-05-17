@@ -20,6 +20,11 @@
             alt="Adicionar tarefa"
           >
         </button>
+        <button
+          @click.prevent="testAnalytics"
+        >
+          aperta pra eu ativar
+        </button>
       </form>
       <div class="todo__list">
         <h2 class="todo__list__title">
@@ -130,6 +135,11 @@ import { mapActions, mapGetters } from 'vuex';
           'event_category': 'click-add-todo',
         });
       },
+      testAnalytics() {
+        this.$gtag.event('add-motive', {
+          'event_category': 'give-multiples-add-motive',
+        });
+      }
     },
   };
 </script>
