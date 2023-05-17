@@ -125,6 +125,10 @@ import { mapActions, mapGetters } from 'vuex';
       addNewTodo(text) {
         this.addTodo(text);
         this.text = '';
+
+        this.$gtag.event('add-todo', {
+          'event_category': 'click-add-todo',
+        });
       },
     },
   };
