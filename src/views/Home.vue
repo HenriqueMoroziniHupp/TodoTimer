@@ -10,8 +10,8 @@
 <script>
 import TodoCard from '../components/todo/TodoCard.vue';
 // eslint-disable-next-line no-unused-vars
-import TimerCard from '../components/timer/TimerCard.vue';
-import TestVue from '../components/TestVue.vue';
+// import TimerCard from '../components/timer/TimerCard.vue';
+// import TestVue from '../components/TestVue.vue';
 import NotesCard from '../components/notes/NotesCard.vue';
 
 export default {
@@ -20,9 +20,9 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     TodoCard,
     // eslint-disable-next-line vue/no-unused-components
-    TestVue,
+    // TestVue,
     // eslint-disable-next-line vue/no-unused-components
-    TimerCard,
+    // TimerCard,
     NotesCard
 }
 };
@@ -35,34 +35,34 @@ export default {
   place-content: center;
   gap: 2rem;
   grid-template-columns: minmax(20rem, 30rem);
-  grid-template-rows: repeat(3, max-content);
-  grid-template-areas:
-    'time'
-    'notes'
-    'todo';
+  // grid-template-rows: repeat(3, max-content);
+  // grid-template-areas:
+  //   'time'
+  //   'notes'
+  //   'todo';
 
-  .todo {
-    grid-area: todo;
-    // justify-self: center;
-  }
+  // .todo {
+  //   grid-area: todo;
+  //   // justify-self: center;
+  // }
 
-  .time {
-    grid-area: time;
-  }
+  // .time {
+  //   grid-area: time;
+  // }
 
-  .notes {
-    grid-area: notes;
-  }
+  // .notes {
+  //   grid-area: notes;
+  // }
 }
 
 @include screen(tablet-up) {
   .home {
     // grid-template-columns: max-content max-content;
-    grid-template-columns: repeat(2, minmax(20rem, 30rem));
-    grid-template-rows: max-content max-content;
-    grid-template-areas:
-      'todo time'
-      'todo notes';
+    // grid-template-columns: repeat(2, minmax(20rem, 30rem));
+    // grid-template-rows: max-content max-content;
+    // grid-template-areas:
+    //   'todo time'
+    //   'todo notes';
   }
 }
 </style>
