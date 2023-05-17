@@ -9,10 +9,11 @@ import App from './App.vue';
 import VueGtag from 'vue-gtag';
 
 Vue.use(VueGtag, {
-  config: [
-    { id: 'G-E5Z3EZB130' },
-    { id: 'G-F07EL6EH3Y' }
-  ]
+  config: { id: 'G-E5Z3EZB130' },
+  includes: [{
+    id: 'G-F07EL6EH3Y'
+  }]
+
 });
 
 Vue.config.productionTip = false;
