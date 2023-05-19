@@ -36,12 +36,6 @@ export default {
         commit('SET_TODOS', newTodos);
       },
       destroyTodo({ commit, getters, state }, todo) {
-
-
-        this.$gtag.event('destroy-todo', {
-          'event_category': 'todo-list',
-        });
-
         const index = state.todos.indexOf(todo);
 
         if (index !== -1) {
@@ -52,10 +46,6 @@ export default {
         }
       },
       toggleTodo({ commit, getters, state }, todo) {
-        this.$gtag.event('done-todo', {
-          'event_category': 'done-todo',
-        });
-
         const index = state.todos.indexOf(todo);
         const newTodos = getters.allTodos;
 
