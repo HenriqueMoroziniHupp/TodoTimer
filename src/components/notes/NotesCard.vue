@@ -13,6 +13,7 @@
         class="notes-textarea"
         placeholder="Write your notes ^-^"
         @keyup="setNote(text)"
+        @keypress.once="useNotesGA4"
       >
     </div>
       </textarea>
@@ -40,6 +41,11 @@ import { mapActions, mapGetters } from 'vuex';
       ...mapActions([
         'setNote',
       ]),
+      useNotesGA4() {
+        this.$gtag.event('use-notes', {
+          'event_category': 'my-notes',
+        });
+      }
     },
   };
 </script>
