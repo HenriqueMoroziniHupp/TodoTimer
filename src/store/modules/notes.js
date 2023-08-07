@@ -1,6 +1,6 @@
 export default {
   state: {
-    note: 'vuex',
+    note: '',
   },
   getters: {
     getNote: (state) => state.note,
@@ -8,7 +8,6 @@ export default {
   actions: {
     setNote({ commit }, note) {
       commit('SET_NOTE', note);
-      console.log(note);
     },
   },
   mutations: {

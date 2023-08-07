@@ -20,6 +20,11 @@
             alt="Adicionar tarefa"
           >
         </button>
+        <button
+          @click.prevent="testAnalytics"
+        >
+          aperta pra eu ativar
+        </button>
       </form>
       <div class="todo__list">
         <h2 class="todo__list__title">
@@ -32,7 +37,7 @@
         >
           <button
             class="btn-check"
-            @click="toggleTodo(todo)"
+            @click="toggleTodoMethods(todo)"
           >
             <img
               v-if="todo.done"
@@ -46,7 +51,7 @@
           </p>
           <button
             class="btn-destoy"
-            @click="destroyTodo(todo)"
+            @click="destroyTodoMethods(todo)"
           >
             <img
               src="../../assets/img/icon-cross.svg"
@@ -125,7 +130,31 @@ import { mapActions, mapGetters } from 'vuex';
       addNewTodo(text) {
         this.addTodo(text);
         this.text = '';
+
+        this.$gtag.event('add-todo', {
+          'event_category': 'click-add-todo',
+        });
       },
+      destroyTodoMethods(todo) {
+        this.destroyTodo(todo);
+
+        this.$gtag.event('destroy-todo', {
+          'event_category': 'todo-list',
+        });
+      },
+
+      toggleTodoMethods(todo) {
+        this.toggleTodo(todo);
+        this.$gtag.event('done-todo', {
+          'event_category': 'done-todo',
+        });
+      },
+
+      testAnalytics() {
+        this.$gtag.event('add-motive', {
+          'event_category': 'give-multiples-add-motive',
+        });
+      }
     },
   };
 </script>

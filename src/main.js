@@ -5,7 +5,16 @@ import router from './router';
 import store from './store';
 import App from './App.vue';
 
-// Global SVG Component
+// Gtag configuration
+import VueGtag from 'vue-gtag';
+
+Vue.use(VueGtag, {
+  config: { id: 'G-E5Z3EZB130' },
+  includes: [{
+    id: 'G-F07EL6EH3Y'
+  }]
+
+});
 
 Vue.config.productionTip = false;
 
